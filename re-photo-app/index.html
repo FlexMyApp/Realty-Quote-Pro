@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a365d">
+  <meta name="description" content="Real Estate Photography Quote, Invoice & Job Management">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>RE Photo Pro</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <button id="menuBtn" class="icon-btn" aria-label="Menu">☰</button>
+        <h1 id="pageTitle">Dashboard</h1>
+      </div>
+      <div class="header-right">
+        <button id="newJobBtn" class="btn btn-primary btn-sm">+ New Job</button>
+      </div>
+    </header>
+
+    <!-- Sidebar / Nav -->
+    <nav id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">📷 RE Photo Pro</span>
+        <button id="closeSidebar" class="icon-btn">×</button>
+      </div>
+      <ul class="nav-list">
+        <li data-view="dashboard" class="nav-item active">Dashboard</li>
+        <li data-view="jobs" class="nav-item">Jobs</li>
+        <li data-view="new-job" class="nav-item">New Quote / Job</li>
+        <li data-view="clients" class="nav-item">Clients</li>
+        <li data-view="pricing" class="nav-item">Pricing Rules</li>
+        <li data-view="settings" class="nav-item">Settings & Backup</li>
+      </ul>
+      <div class="sidebar-footer">
+        <small id="storageInfo">Local storage</small>
+      </div>
+    </nav>
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="main-content">
+      <!-- Views will be injected here -->
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- Confirm Modal -->
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="confirmTitle">Confirm</h3>
+      <p id="confirmMessage"></p>
+      <div class="modal-actions">
+        <button id="confirmCancel" class="btn btn-secondary">Cancel</button>
+        <button id="confirmOk" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
